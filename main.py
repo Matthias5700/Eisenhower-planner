@@ -45,7 +45,6 @@ def frage_kurzbeschreibung():
 
 
 
-
 def frage_wichtigkeit():
     """Fragt die Wichtigkeit einer Aufgabe von 1 bis 5 ab."""
 
