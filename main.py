@@ -1,3 +1,29 @@
+from pathlib import Path
+
+BENOETIGTE_DATEIEN = [
+    "score/score.py",
+]
+
+
+def fehlende_dateien():
+    """Gibt eine Liste aller benötigten Dateien zurück, die fehlen."""
+    fehlend = []
+    for datei in BENOETIGTE_DATEIEN:
+        if not Path(datei).exists():
+            fehlend.append(datei)
+    return fehlend
+
+
+def main():
+    fehlend = fehlende_dateien()
+    if len(fehlend) > 0:
+        print("Das Programm kann nicht starten. Folgende Dateien fehlen:")
+        for datei in fehlend:
+            print("-", datei)
+        return
+
+
+
 from score.score import lese_deadline, berechne
 
 def frage_titel():
@@ -16,7 +42,6 @@ def frage_kurzbeschreibung():
     """Fragt eine optionale Kurzbeschreibung ab."""
     beschreibung = input("Kurzbeschreibung (optional): ").strip()
     return beschreibung
-
 
 
 

@@ -34,7 +34,6 @@ def lese_deadline(text):
         stunde, minute = zeit.split(":")        # "17", "00"
         return datetime(int(jahr), int(monat), int(tag), int(stunde), int(minute))
     except ValueError:
-        # Falsche Anzahl Teile, Buchstaben statt Zahlen oder unmögliches Datum wie 31.02.
         raise ValueError(fehlermeldung)
 
 
@@ -122,9 +121,3 @@ def sortiere_nach_score(aufgaben):
         sortiert.append(beste)
         rest.remove(beste)
     return sortiert
-
-
-if __name__ == "__main__":
-    # Kleiner Test beim direkten Ausführen: python score.py
-    beispiel = {"titel": "Projektarbeit", "wichtigkeit": 4, "dringlichkeit": "n", "deadline": "06.12.2026 23:55"}
-    print(berechne(beispiel))
