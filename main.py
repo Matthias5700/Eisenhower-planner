@@ -2,7 +2,6 @@ from pathlib import Path
 
 BENOETIGTE_DATEIEN = [
     "score/score.py",
-    "frontend.py",
 ]
 
 
